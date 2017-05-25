@@ -12,11 +12,12 @@ public class Crawler {
 		client.getOptions().setJavaScriptEnabled(false);
 	}
 	
-	public static void getPageContent(String url){
+	public static HtmlPage getPageContent(String url){
 		try{
-			HtmlPage page = client.getPage(url);
+			return client.getPage(url);
 		}catch(Exception exception){
 			exception.printStackTrace();
+			return null;
 		}
 	}
 	
